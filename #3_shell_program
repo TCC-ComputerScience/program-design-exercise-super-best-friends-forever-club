@@ -1,0 +1,59 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int row = 9; // set number of rows
+const int column = 11; // set number of columns
+
+//all CPU ships placed
+//pre: none
+//post: random cpu play board
+void FillCPUBoard(int gameBoard[][column]);
+
+//pre: none
+//post: blank board printed with wave/ocean icons 9x11
+//Void PrintBoard();
+void PrintBoard(char boardArray[][column], int row, int column);
+
+int main(){
+
+    srand(time(nullptr)); // Seed random number generator
+
+    char displayBoard [row][column]; // declare display board
+    int gameBoard [row][column]; // declare game board
+
+    FillCPUBoard (gameBoard); // Call initBoard and initialize game board
+
+    cout << endl; // for display purposes
+
+    PrintBoard(displayBoard, row, column); // call PrintDisplayBoard
+
+    return 0;
+}
+
+void PrintBoard(char displayBoard[][column], int row, int column) {
+    //Loop through and display tildes for each spot on the game board
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < column; j++)
+            cout << setw(4) << '~';
+        cout << endl;
+    }
+}
+
+void FillCPUBoard(int gameBoard[][column]){
+    // Loop through all rows
+    for (int i = 0; i < row; i++){
+        // Loop through all columns
+        for (int j = 0; j < column; j++){
+            gameBoard[i][j]= (rand() % 5) + 1;   // Enter a random number from one through five
+        }
+    }
+
+    // display random numbers assigned to array
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < column; j++)
+            cout << setw(4) << gameBoard[i][j];
+        cout << endl;
+    }
+}

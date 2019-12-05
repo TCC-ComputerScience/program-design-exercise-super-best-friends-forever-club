@@ -1,0 +1,15 @@
+// random number generator seeded
+//pre: 2-d array declared
+//post: 2-d array filled with random numbers
+void FillCPUBoard (/*in_out*/ int gameBoard[][columns])
+  // loop through row
+    // loop through column
+      // assign ranndom number to array element (1-5)
+      
+//Pre: 2-d array declared
+//Post: A game board with tildes displayed
+void PrintBoard (/*in_out*/ int displayBoard[][columns])
+  // loop through row
+    // loop through column
+      // display tilde
+  
